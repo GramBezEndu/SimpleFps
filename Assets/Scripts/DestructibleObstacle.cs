@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DestructibleObstacle : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class DestructibleObstacle : MonoBehaviour
     private Material material;
 
     private int health;
+
+    public event EventHandler OnObjectDestroyed;
 
     public event EventHandler<int> OnHealthChanged;
 
@@ -25,6 +28,8 @@ public class DestructibleObstacle : MonoBehaviour
         OnHealthChanged?.Invoke(this, health);
         if (health <= 0)
         {
+            OnObjectDestroyed?.Invoke(this, new EventArgs());
+            Debug.Log("On Object Destroyed event called");
             Destroy(gameObject);
         }
     }

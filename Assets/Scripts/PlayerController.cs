@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour
 
     private DestructibleObstacle destructibleObstacle;
 
+    public event EventHandler<DestructibleObstacle> OnObstacleChanged;
+
     public DestructibleObstacle DestructibleObstacle
     {
         get => destructibleObstacle;
@@ -66,12 +68,10 @@ public class PlayerController : MonoBehaviour
             if (destructibleObstacle != value)
             {
                 destructibleObstacle = value;
-                onObstacleChanged?.Invoke(this, destructibleObstacle);
+                OnObstacleChanged?.Invoke(this, destructibleObstacle);
             }
         }
     }
-
-    public event EventHandler<DestructibleObstacle> onObstacleChanged;
 
     private void Awake()
     {
@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
 
         if (move != Vector2.zero)
         {
-            inputDirection = transform.right * move.x + transform.forward * move.y;
+            inputDirection = (transform.right * move.x) + (transform.forward * move.y);
         }
 
         if (characterController.isGrounded)
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
         velocityY += gravity * Time.deltaTime;
 
-        characterController.Move(inputDirection.normalized * (speed * Time.deltaTime) + new Vector3(0.0f, velocityY, 0.0f) * Time.deltaTime);
+        characterController.Move((inputDirection.normalized * (speed * Time.deltaTime)) + (new Vector3(0.0f, velocityY, 0.0f) * Time.deltaTime));
     }
 
     private void UpdateLook()

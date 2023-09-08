@@ -1,0 +1,11 @@
+﻿[*.cs]
+
+# Default severity for analyzer diagnostics with category 'StyleCop.CSharp.ReadabilityRules'
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.ReadabilityRules.severity = none
+dotnet_diagnostic.SA1633.severity=silent
+dotnet_diagnostic.SA1600.severity=silent
+dotnet_diagnostic.SA1601.severity=silent
+
+# Default severity for analyzer diagnostics with category 'Style'
+dotnet_analyzer_diagnostic.category-Style.severity = none
+dotnet_diagnostic.SA1602.severity=silent

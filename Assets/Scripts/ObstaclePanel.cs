@@ -19,12 +19,12 @@ public class ObstaclePanel : MonoBehaviour
 
     private void OnEnable()
     {
-        playerController.onObstacleChanged += OnObstacleChanged;
+        playerController.OnObstacleChanged += OnObstacleChanged;
     }
 
     private void OnDisable()
     {
-        playerController.onObstacleChanged -= OnObstacleChanged;
+        playerController.OnObstacleChanged -= OnObstacleChanged;
     }
 
     private void ChangeObstacle(DestructibleObstacle obstacle)
@@ -39,7 +39,7 @@ public class ObstaclePanel : MonoBehaviour
     {
         if (currentObstacle != null)
         {
-            currentObstacle.onHealthChanged += OnHpChanged;
+            currentObstacle.OnHealthChanged += OnHealthPointChanged;
         }
     }
 
@@ -47,7 +47,7 @@ public class ObstaclePanel : MonoBehaviour
     {
         if (currentObstacle != null)
         {
-            currentObstacle.onHealthChanged -= OnHpChanged;
+            currentObstacle.OnHealthChanged -= OnHealthPointChanged;
         }
     }
 
@@ -69,7 +69,7 @@ public class ObstaclePanel : MonoBehaviour
         ChangeObstacle(e);
     }
 
-    private void OnHpChanged(object sender, int e)
+    private void OnHealthPointChanged(object sender, int e)
     {
         UpdateText(currentObstacle);
     }

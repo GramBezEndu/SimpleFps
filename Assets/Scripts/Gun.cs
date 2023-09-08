@@ -25,12 +25,6 @@ public class Gun : MonoBehaviour
 
     public string GunName => gunName;
 
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = fireSound;
-    }
-
     public void TryShoot(DestructibleObstacle obstacle)
     {
         float currentTime = Time.time;
@@ -77,5 +71,11 @@ public class Gun : MonoBehaviour
         }
 
         return result.ToString();
+    }
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = fireSound;
     }
 }

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -13,14 +11,9 @@ public class WeaponManager : MonoBehaviour
 
     private int currentWeaponIndex;
 
+    public event EventHandler<Gun> OnWeaponSwitched;
+
     public Gun CurrentWeapon => weapons[currentWeaponIndex];
-
-    public event EventHandler<Gun> onWeaponSwitched;
-
-    private void Start()
-    {
-        SetWeapon(defaultWeaponIndex);   
-    }
 
     public void SetWeapon(int index)
     {
@@ -37,7 +30,7 @@ public class WeaponManager : MonoBehaviour
         }
 
         currentWeaponIndex = index;
-        onWeaponSwitched?.Invoke(this, CurrentWeapon);
+        OnWeaponSwitched?.Invoke(this, CurrentWeapon);
 
         for (int i = 0; i < weapons.Length; i++)
         {
@@ -48,5 +41,10 @@ public class WeaponManager : MonoBehaviour
     public void TryShoot(DestructibleObstacle obstacle)
     {
         CurrentWeapon.TryShoot(obstacle);
+    }
+
+    private void Start()
+    {
+        SetWeapon(defaultWeaponIndex);
     }
 }

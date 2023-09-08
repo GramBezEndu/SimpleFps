@@ -14,12 +14,12 @@ public class WeaponPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        weaponManager.onWeaponSwitched += UpdateGunText;
+        weaponManager.OnWeaponSwitched += UpdateGunText;
     }
 
     private void OnDisable()
     {
-        weaponManager.onWeaponSwitched -= UpdateGunText;
+        weaponManager.OnWeaponSwitched -= UpdateGunText;
     }
 
     private void UpdateGunText(object sender, Gun newGun)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2160.373, g: 2264.0742, b: 3286.539, a: 1}
+  m_IndirectSpecularColor: {r: 2159.747, g: 2263.621, b: 3286.6172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -658,7 +658,6 @@ GameObject:
   - component: {fileID: 1530279632}
   - component: {fileID: 1530279631}
   - component: {fileID: 1530279630}
-  - component: {fileID: 1530279635}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -744,24 +743,6 @@ Transform:
   m_Father: {fileID: 397186869}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &1530279635
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530279629}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1601968578
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +755,6 @@ GameObject:
   - component: {fileID: 1601968583}
   - component: {fileID: 1601968582}
   - component: {fileID: 1601968581}
-  - component: {fileID: 1601968580}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -797,24 +777,6 @@ Transform:
   m_Father: {fileID: 397186869}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
---- !u!143 &1601968580
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601968578}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &1601968581
 BoxCollider:
   m_ObjectHideFlags: 0

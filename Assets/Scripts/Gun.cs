@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
@@ -49,7 +47,7 @@ public class Gun : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Can't damage this material");
+                    Debug.Log("Can't damage this material with this gun");
                 }
             }
         }

@@ -15,7 +15,7 @@ public class WeaponManager : MonoBehaviour
 
     public Gun CurrentWeapon => weapons[currentWeaponIndex];
 
-    public event Action<Gun> onWeaponSwitched;
+    public event EventHandler<Gun> onWeaponSwitched;
 
     private void Start()
     {
@@ -37,7 +37,7 @@ public class WeaponManager : MonoBehaviour
         }
 
         currentWeaponIndex = index;
-        onWeaponSwitched?.Invoke(CurrentWeapon);
+        onWeaponSwitched?.Invoke(this, CurrentWeapon);
 
         for (int i = 0; i < weapons.Length; i++)
         {

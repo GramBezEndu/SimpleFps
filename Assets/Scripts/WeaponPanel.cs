@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -15,24 +12,17 @@ public class WeaponPanel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI breaksText;
 
-    private Action<Gun> updateGunText;
-
-    private void Awake()
-    {
-        updateGunText = (gun) => UpdateWeaponPanel(gun);
-    }
-
     private void OnEnable()
     {
-        weaponManager.onWeaponSwitched += updateGunText;
+        weaponManager.onWeaponSwitched += UpdateGunText;
     }
 
     private void OnDisable()
     {
-        weaponManager.onWeaponSwitched -= updateGunText;
+        weaponManager.onWeaponSwitched -= UpdateGunText;
     }
 
-    private void UpdateWeaponPanel(Gun newGun)
+    private void UpdateGunText(object sender, Gun newGun)
     {
         weaponText.text = $"Weapon: {newGun.GunName}";
         breaksText.text = $"Breaks: {newGun.GetMaterialString()}";

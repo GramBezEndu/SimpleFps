@@ -14,6 +14,9 @@ public class Gun : MonoBehaviour
     private string gunName = "?";
 
     [SerializeField]
+    private int damage = 25;
+
+    [SerializeField]
     private Material penetrationMaterial;
 
     [SerializeField]
@@ -37,7 +40,7 @@ public class Gun : MonoBehaviour
             {
                 if (penetrationMaterial.HasFlag(obstacle.Material))
                 {
-                    obstacle.TakeDamage();
+                    obstacle.TakeDamage(damage);
                 }
                 else
                 {

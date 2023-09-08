@@ -195,5 +195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 5
   gunName: Ion Storm
+  damage: 20
   penetrationMaterial: 6
   fireSound: {fileID: 8300000, guid: b9bcff787e03ea4448419527c126e177, type: 3}

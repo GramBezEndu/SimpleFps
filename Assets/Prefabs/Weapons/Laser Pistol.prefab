@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 5
   gunName: Laser Pistol
+  damage: 15
   penetrationMaterial: 2
   fireSound: {fileID: 8300000, guid: 92d35fe1c59bbd14eaee9e3d3b54cea7, type: 3}
 --- !u!1 &1916360600729106603

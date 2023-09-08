@@ -1076,6 +1076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 2
   gunName: Photon Edge
+  damage: 35
   penetrationMaterial: -1
   fireSound: {fileID: 8300000, guid: 929fd214252d7034d93c9463bf63e091, type: 3}
 --- !u!1 &5454693739038128316

@@ -19,9 +19,9 @@ public class DestructibleObstacle : MonoBehaviour
 
     public int MaxHealth => maxHealth;
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        health -= 25;
+        health -= damage;
         OnHealthChanged?.Invoke(this, health);
         if (health <= 0)
         {
